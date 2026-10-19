@@ -1,7 +1,10 @@
 import axios from "axios"
 
+ // In production, there's no localhost so we have to make this dynamic
+const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:10001/api" : "/api";
+
 const api = axios.create({
-    baseURL : "http://localhost:10001/api"
+    baseURL : BAUSE_URL,
 })
 
 export default api;
